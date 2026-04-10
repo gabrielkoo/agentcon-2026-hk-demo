@@ -63,7 +63,7 @@
   .terminal-scene {
     background: var(--bg-terminal);
     padding: 12px 16px;
-    padding-bottom: 80px;
+    padding-bottom: 100px;
   }
   .titlebar {
     background: var(--bg-terminal-alt);
@@ -114,6 +114,7 @@
     margin: 6px 0 6px 20px;
     font-size: 13px;
     overflow-x: auto;
+    white-space: pre;
   }
   .json-key { color: var(--blue); }
   .json-str { color: var(--success); }
@@ -390,7 +391,12 @@
     <hr class="divider">
     <div class="line"><span class="accent">Agent:</span> I'll look up that ticket for you.</div>
     <div class="line">&nbsp;</div>
-    <div class="line"><span class="badge badge-tool">tool</span> <span class="info">get_internal_data</span><span class="dim">(ticket_id="BT-4582")</span></div>
+    <div class="line"><span class="badge badge-tool">tool</span> <span class="info">get_internal_data</span></div>
+    <div class="json-block">
+<span class="dim">{</span>
+  <span class="json-key">"ticket_id"</span>: <span class="json-str">"BT-4582"</span>
+<span class="dim">}</span>
+    </div>
     <div class="line">&nbsp;</div>
     <div class="line"><span class="badge badge-mcp">mcp</span> <span class="warning">bowtie-internal requires authentication</span></div>
     <div class="line"><span class="dim">  Server returned: </span><span class="error">401 Unauthorized — Bearer token required</span></div>
@@ -569,7 +575,15 @@
   <!-- Step 2: Successful call -->
   <div class="step" data-scene="scene-terminal-2" data-order="1">
     <div class="line">&nbsp;</div>
-    <div class="line"><span class="badge badge-tool">tool</span> <span class="info">get_internal_data</span><span class="dim">(ticket_id=</span><span class="json-str">"BT-4582"</span><span class="dim">)</span></div>
+    <div class="line"><span class="badge badge-tool">tool</span> <span class="info">get_internal_data</span></div>
+    <div class="json-block">
+<span class="dim">// params</span>
+<span class="dim">{</span>
+  <span class="json-key">"ticket_id"</span>: <span class="json-str">"BT-4582"</span>
+<span class="dim">}</span>
+    </div>
+    <div class="line">&nbsp;</div>
+    <div class="line"><span class="dim">// output</span></div>
     <div class="json-block">
 <span class="dim">{</span>
   <span class="json-key">"ticket_id"</span>: <span class="json-str">"BT-4582"</span>,
@@ -599,7 +613,16 @@
     <hr class="divider">
     <div class="line"><span class="accent">Agent:</span> I'll try that query.</div>
     <div class="line">&nbsp;</div>
-    <div class="line"><span class="badge badge-tool">tool</span> <span class="info">get_internal_data</span><span class="dim">(resource=</span><span class="json-str">"hr_salaries"</span><span class="dim">, query=</span><span class="json-str">"SELECT * FROM salaries"</span><span class="dim">)</span></div>
+    <div class="line"><span class="badge badge-tool">tool</span> <span class="info">get_internal_data</span></div>
+    <div class="json-block">
+<span class="dim">// params</span>
+<span class="dim">{</span>
+  <span class="json-key">"resource"</span>: <span class="json-str">"hr_salaries"</span>,
+  <span class="json-key">"query"</span>: <span class="json-str">"SELECT * FROM salaries"</span>
+<span class="dim">}</span>
+    </div>
+    <div class="line">&nbsp;</div>
+    <div class="line"><span class="dim">// output</span></div>
     <div class="json-block" style="border-color: var(--error);">
 <span class="dim">{</span>
   <span class="json-key">"error"</span>: <span class="error">"forbidden"</span>,
@@ -677,6 +700,11 @@
     <div class="line">&nbsp;</div>
     <div class="line"><span class="pink" style="font-size: 15px"><strong>"If you can't do it in the UI, the agent can't do it via MCP"</strong></span></div>
   </div>
+</div>
+
+<!-- ── Watermark ── -->
+<div style="position:fixed;bottom:36px;left:0;right:0;background:#0d0d1a;border-top:1px solid var(--border);padding:5px 16px;text-align:center;font-size:11px;color:#585b70;z-index:998;letter-spacing:0.5px;">
+  Agent Con 2026 HK &mdash; <span style="color:var(--accent);font-weight:600;">Team Wide Vibe Coding</span>
 </div>
 
 <!-- ── HUD ── -->
